@@ -19,12 +19,12 @@ app.use("/api/v1/bootcamps", bootcamps);
 
 const port = process.env.PORT;
 const server = app.listen(port, () => {
-  console.log(`App listening on port ${port}!`);
+  console.log(`App listening on port ${port}!`.yellow.bold);
 });
 
 // handle undhandled promise rejections
 process.on("unhandledRejection", (err, promise) => {
-  console.log(`Error: ${err.mesaage}`);
+  console.log(`Error: ${err.mesaage}`.red.bold);
 
   // close server and exit process
   server.close(() => process.exit(1));
